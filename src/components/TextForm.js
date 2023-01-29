@@ -94,13 +94,13 @@ export default function TextForm(props) {
             <label htmlFor="formText" className="form-label">{props.heading}</label>
             <textarea className="form-control" value={text} onChange={handleOnChange} placeholder="Enter the text here" style={{backgroundColor: props.mode==='light'?'white':'grey', placeholderTextColor: props.mode==='light'?'black':'white', color: props.mode==='light'?'black':'white'}} id="formText" rows="7"></textarea>
             </div>
-            <button className="btn btn-primary mx-1" onClick={handleUpClick}>UpperCase</button>
-            <button className="btn btn-primary mx-1" onClick={handleLoClick}>LowerCase</button>
-            <button className="btn btn-primary mx-1" onClick={handleTrimClick}>Remove Extra space</button>
-            <button className="btn btn-primary mx-1" onClick={handleRemSpecial}>Replace space with Hyphen</button>
-            <button className="btn btn-primary mx-1" onClick={handleTitleClick}>Title Case</button>
-            <button className="btn btn-secondary mx-1" onClick={handleCopy}>Copy Text</button>
-            <button className="btn btn-danger mx-1" onClick={handleClear}>Clear Text</button>
+            <button className="btn btn-primary m-1" onClick={handleUpClick}>UpperCase</button>
+            <button className="btn btn-primary m-1" onClick={handleLoClick}>LowerCase</button>
+            <button className="btn btn-primary m-1" onClick={handleTrimClick}>Remove Extra space</button>
+            <button className="btn btn-primary m-1" onClick={handleRemSpecial}>Replace space with Hyphen</button>
+            <button className="btn btn-primary m-1" onClick={handleTitleClick}>Title Case</button>
+            <button className="btn btn-secondary m-1" onClick={handleCopy}>Copy Text</button>
+            <button className="btn btn-danger m-1" onClick={handleClear}>Clear Text</button>
         </div>
         <div className="container my-3" style={{color: props.mode==='light'?'black':'white' }}>
             <h3>Your text Summary</h3>
