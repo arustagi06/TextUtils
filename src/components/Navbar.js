@@ -1,17 +1,17 @@
 // jshint esversion:6
 import React from "react";
 import PropTypes from "prop-types";
-// import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Navbar = (props) => {
   return (
     <div>
       <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
         <div className="container-fluid">
-          {/* <Link className="navbar-brand" to="/"> */}
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/"/>
+          {/* <a className="navbar-brand" href="/">
             {props.title}
-          </a>
+          </a> */}
           <button
             className="navbar-toggler"
             type="button"
@@ -31,12 +31,12 @@ const Navbar = (props) => {
                   Home
                 </a>
               </li>
-              {/* <li className="nav-item"> */}
-                {/* <Link className="nav-link" to="/about"> */}
+              <li className="nav-item">
+                <Link className="nav-link" to="/about">{props.aboutText}</Link>
                 {/* <a className="nav-link" href="/about">
                   {props.aboutText}
-                </a>
-              </li> */}
+                </a> */}
+              </li>
             </ul>
             <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
               <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
