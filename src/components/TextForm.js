@@ -39,11 +39,17 @@ export default function TextForm(props) {
         }
     };
     const handleRemSpecial = ()=>{
-        console.log("Remove Hyphen was clicked");
-        let newText = text.toLowerCase().replace(/[^A-Z0-9]+/ig, "-");
-        // newText = newText.replace(/[\s_@.?,&$-]*/g, "-");
-        setText(newText);
-        props.showAlert("Special characters removed", "success");
+        if(text.length>0){
+
+            console.log("Remove Hyphen was clicked");
+            let newText = text.toLowerCase().replace(/[^A-Z0-9]+/ig, "-");
+            setText(newText);
+            props.showAlert("Special characters removed", "success");
+            // newText = newText.replace(/[\s_@.?,&$-]*/g, "-");
+        }
+        else{
+            props.showAlert("Please enter text", "warning");
+        }
     };
     const handleTitleClick = ()=>{
         console.log("TitleCase was clicked");
@@ -104,7 +110,7 @@ export default function TextForm(props) {
         </div>
         <div className="container my-3" style={{color: props.mode==='light'?'black':'white' }}>
             <h3>Your text Summary</h3>
-            <p>{text.replace(/\s+/g, " ").split(' ').length} words and {text.length} characters</p>
+            <p>{text.split(' ').filter((element)=>{ return element.length!==0}).length} words and {text.length} characters</p>
             <p>{text.replace(/\s+/g, " ").length * 0.008 } minute read</p>
             <h3>Preview</h3>
             <p>{text.length>0?text:"Enter some text in the textarea to preview it here"}</p>
